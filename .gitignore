@@ -7,3 +7,9 @@ __pycache__
 *.mod
 .vscode
 .bld
+netcdf
+
+*.x
+*.a
+
+bld

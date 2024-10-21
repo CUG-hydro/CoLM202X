@@ -2,14 +2,21 @@
 # mpif90 - gfortran 
 # 
 
-  FF = mpif90 -fopenmp
-   
-NETCDF_LIB = /usr/lib/x86_64-linux-gnu
-NETCDF_INC = /usr/include
+FF = mpif90 -fopenmp
+FCMP = /usr/bin/gfortran -fopenmp
+FC   = /usr/bin/gfortran 
+
+NETCDF_LIB = /opt/netcdf_v4.9.2_openmpi/lib
+NETCDF_INC = /opt/netcdf_v4.9.2_openmpi/include
+# NETCDF_LIB = /home/kong/github/CUG-hydro/CoLM202X/netcdf/lib
+# NETCDF_INC = /home/kong/github/CUG-hydro/CoLM202X/netcdf/include
+
+# NETCDF_LIB = /usr/lib/x86_64-linux-gnu
+# NETCDF_INC = /usr/include
 
 #  NETCDF_LIB = /opt/netcdf-c-4.9.2-fortran-4.6.0-gnu/lib
 #  NETCDF_INC = /opt/netcdf-c-4.9.2-fortran-4.6.0-gnu/include
-   
+  
   MOD_CMD = -J
 
 # determine the gfortran version
@@ -48,8 +55,6 @@ DCDF=-DUseCDF -DUseCDF_CMF
 #DATM=-DNoAtom
 CFLAGS=$(DMPI) $(DCDF) $(DATM) 
 #----
-FCMP = /usr/bin/gfortran -fopenmp
-FC   = /usr/bin/gfortran 
 
 LFLAGS =
 FFLAGS = -O3 -Wall -cpp -free -fimplicit-none -fbounds-check -fbacktrace 

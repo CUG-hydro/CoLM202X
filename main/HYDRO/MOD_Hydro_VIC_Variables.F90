@@ -43,23 +43,23 @@ module MOD_Hydro_VIC_Variables
    ! * @brief   This structure stores the soil parameters for a grid cell.
    ! *****************************************************************************/
    type soil_con_struct
-      real(r8) :: frost_fract(MAX_FROST_AREAS) ! /**< spatially distributed frost coverage fractions */
-      real(r8) :: max_moist(MAX_LAYERS)        ! /**< Maximum moisture content (mm) per layer */
-      real(r8) :: resid_moist(MAX_LAYERS)      ! /**< Residual moisture content of soil layer (mm) */
-      real(r8) :: Ksat(MAX_LAYERS)             ! /**< Saturated hydraulic conductivity (mm/day) */
-      real(r8) :: expt(MAX_LAYERS)             ! /**< Layer-specific exponent n (=3+2/lambda) in Campbell's equation for hydraulic conductivity, HBH 5.6 */
-      !!!! to be calibrated
-      real(r8) :: b_infilt                     ! /**< Infiltration parameter */
-      real(r8) :: Ds                           ! /**< Fraction of maximum subsurface flow rate */
-      real(r8) :: Ws                           ! /**< Fraction of maximum soil moisture */
-      real(r8) :: Dsmax                        ! /**< Maximum subsurface flow rate (mm/day) */
-      real(r8) :: c                            ! /**< Exponent in ARNO baseflow scheme */
-      real(r8) :: depth(MAX_LAYERS)            ! /**< Thickness of each soil moisture layer (m) */
-      !!! for zwt calcaulation, not used
-      real(r8) :: bubble(MAX_LAYERS)                                  ! /**< Bubbling pressure, HBH 5.15 (cm)
-      real(r8) :: zwtvmoist_zwt(MAX_LAYERS + 2, MAX_ZWTVMOIST)        ! /**< Zwt values in the zwt-v-moist curve for each layer */
-      real(r8) :: zwtvmoist_moist(MAX_LAYERS + 2, MAX_ZWTVMOIST)      ! /**< Moist values in the zwt-v-moist curve for each layer */
-   end type soil_con_struct
+      real(r8) :: frost_fract(MAX_FROST_AREAS)    ! Spatially distributed frost coverage fractions
+      real(r8) :: max_moist(MAX_LAYERS)           ! Maximum moisture content (mm) per layer
+      real(r8) :: resid_moist(MAX_LAYERS)         ! Residual moisture content of soil layer (mm)
+      real(r8) :: Ksat(MAX_LAYERS)                ! Saturated hydraulic conductivity (mm/day)
+      real(r8) :: expt(MAX_LAYERS)                ! Layer-specific exponent n (=3+2/lambda) in Campbell's equation for hydraulic conductivity, HBH 5.6
+      ! Parameters to be calibrated
+      real(r8) :: b_infilt                        ! Infiltration parameter
+      real(r8) :: Ds                              ! Fraction of maximum subsurface flow rate
+      real(r8) :: Ws                              ! Fraction of maximum soil moisture
+      real(r8) :: Dsmax                           ! Maximum subsurface flow rate (mm/day)
+      real(r8) :: c                               ! Exponent in ARNO baseflow scheme
+      real(r8) :: depth(MAX_LAYERS)               ! Thickness of each soil moisture layer (m)
+      ! For zwt calculation, not used
+      real(r8) :: bubble(MAX_LAYERS)              ! Bubbling pressure, HBH 5.15 (cm)
+      real(r8) :: zwtvmoist_zwt(MAX_LAYERS + 2, MAX_ZWTVMOIST)    ! Zwt values in the zwt-v-moist curve for each layer
+      real(r8) :: zwtvmoist_moist(MAX_LAYERS + 2, MAX_ZWTVMOIST)  ! Moist values in the zwt-v-moist curve for each layer
+    end type soil_con_struct
 
 contains
 
